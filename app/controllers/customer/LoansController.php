@@ -6,7 +6,12 @@ class Loans extends Controller {
 
     public function index($id) {
 
-        $this->view('customer/loans/index');
+
+
+        $data = [
+          
+        ];
+        $this->view('customer/loans/index',$data);
 
     }
 }
