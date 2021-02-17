@@ -76,6 +76,12 @@
                             <p>Loans Requests</p>
                         </a>
                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="/customer/loans/index/<?php echo $_SESSION['customer_id'];?>">
+                            <i class="material-icons">person</i>
+                            <p>Loans</p>
+                        </a>
+                    </li>
 
 
                 </ul>
