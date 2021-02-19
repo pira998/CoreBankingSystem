@@ -80,6 +80,7 @@ require APPROOT . '/views/includes/header.php';
                             <table class="table" id="myTable">
                                 <thead class=" text-info">
                                     <th>Account number</th>    
+                                    <th>Checking Account number</th>    
                                     <th>amount</th>
                                     <th>Open date</th>
                                    
@@ -94,6 +95,7 @@ require APPROOT . '/views/includes/header.php';
                                             $accountNumber = substr(str_repeat(0, $length).$number, - $length);
                                         ?>
                                              <td><?php echo $accountNumber ?></td>
+                                            <td><?php echo $checkingAccount->checking_account_number; ?></td>
                                             <td><?php echo $checkingAccount->balance; ?></td>
                                             <td><?php echo $checkingAccount->open_date; ?></td>
                                             <td><?php echo $checkingAccount->branch_id; ?></td>
