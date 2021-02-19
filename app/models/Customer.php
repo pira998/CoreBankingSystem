@@ -7,8 +7,9 @@ class Customer {
     }
 
     public function isIndividualCustomer($id){
-        $this->db->query('SELECT * FROM individual_customers where customer_id=:customer_id');
-        $this->db->bind(':customer_id', (int)$id);
+        $this->db->query("CALL `isIndividualCustomer`(:aid);");
+        $this->db->bind(':aid', (int)$id);
+      
 
          $results = $this->db->rowCount();
          if($results===1){

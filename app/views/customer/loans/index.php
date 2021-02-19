@@ -7,14 +7,14 @@ require APPROOT . '/views/includes/customer_header.php';
    <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-primary">
+                    <div class="card-header card-header-info">
                         <h4 class="card-title ">Customer </h4>
                         <p class="card-category"> Info </p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table" id="myTable">
-                                <thead class=" text-primary">
+                                <thead class=" text-info">
                                     <th>Loan Id</th>    
                                     <th>Amount</th>
                                     <th>Phone Number</th>
