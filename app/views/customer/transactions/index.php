@@ -5,7 +5,7 @@ require APPROOT . '/views/includes/customer_header.php';
 <div class="content">
     <div class="container-fluid">
     <center>
-            <button type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#exampleModal">
+            <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#exampleModal">
                 Create transaction
             </button>
 
@@ -79,7 +79,7 @@ require APPROOT . '/views/includes/customer_header.php';
                                     
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                    <input type="submit" class="btn btn-primary" name="create" value="create"></input>
+                                    <input type="submit" class="btn btn-info" name="create" value="create"></input>
                                 </div>
                             </form>
                         </div>
@@ -92,14 +92,14 @@ require APPROOT . '/views/includes/customer_header.php';
 <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header card-header-primary">
+                    <div class="card-header card-header-info">
                         <h4 class="card-title ">Customer </h4>
                         <p class="card-category"> Info </p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table" id="myTable">
-                                <thead class=" text-primary">
+                                <thead class=" text-info">
                                     <th>Name</th>    
                                     <th>Id</th>
                                     <th>Phone Number</th>

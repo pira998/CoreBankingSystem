@@ -8,7 +8,7 @@ $employee = $data['info'];
         <div class="row">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header card-header-primary">
+                    <div class="card-header card-header-info">
                         <h4 class="card-title">Edit Profile</h4>
                         <p class="card-category">Complete your profile</p>
                     </div>
@@ -72,7 +72,7 @@ $employee = $data['info'];
                             </div>
 
                             
-                            <input type="submit" class="btn btn-primary pull-right" name="Update" value="Update"></input>
+                            <input type="submit" class="btn btn-info pull-right" name="Update" value="Update"></input>
                             <div class="clearfix"></div>
                         </form>
                     </div>
@@ -91,7 +91,7 @@ $employee = $data['info'];
                         <!-- <p class="card-description">
                             Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
                         </p>
-                        <a href="javascript:;" class="btn btn-primary btn-round">Follow</a> -->
+                        <a href="javascript:;" class="btn btn-info btn-round">Follow</a> -->
                     </div>
                 </div>
             </div>

@@ -79,4 +79,10 @@
             $this->execute();
             return $this->statement->rowCount();
         }
+
+        public function resultFunction() {
+            $this->execute();
+            return $this->statement->fetchAll(PDO::FETCH_ASSOC);
+        }
+
     }

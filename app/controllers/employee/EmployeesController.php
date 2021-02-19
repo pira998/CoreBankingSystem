@@ -66,10 +66,6 @@ class Employees extends Controller {
 
         $data = [
             'info' => $info,
-            'id' => '',
-            'firstname'=> '',
-            'lastname'=> '',
-            'username'=> '',
             'email'=> '',
             'address'=> '',
         
@@ -81,9 +77,7 @@ class Employees extends Controller {
             $data = [
                 'id' => $id,
                 'info' => $info,
-                'firstname'=> ($_POST["firstname"]),
-                'lastname'=> ($_POST["lastname"]),
-                'email'=> ($_POST["email"]),
+       
                 'address'=> ($_POST["address"]),
                
                 

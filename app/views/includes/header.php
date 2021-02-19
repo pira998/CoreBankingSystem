@@ -38,7 +38,7 @@
 
 
     <div class="wrapper ">
-        <div class="sidebar" data-color="purple" data-background-color="white"
+        <div class="sidebar" data-color="azure" data-background-color="white"
             data-image="/public/assets/img/sidebar-1.jpg">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | azure | green | orange | danger"
@@ -81,7 +81,7 @@
 
                     <?php } ?>
                     <li class="nav-item ">
-                        <a class="nav-link" href="/employee/savingAccounts">
+                        <a class="nav-link" href="/employee/SavingAccounts">
                             <i class="material-icons">group</i>
                             <p>Saving Accounts</p>
                         </a>
