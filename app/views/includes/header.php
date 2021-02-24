@@ -86,10 +86,34 @@
                             <p>Saving Accounts</p>
                         </a>
                     </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="/employee/savingDeposits">
+                            <i class="material-icons">group</i>
+                            <p>Saving Deposits</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/employee/savingWithdrawals">
+                            <i class="material-icons">group</i>
+                            <p>Saving Withdrawals</p>
+                        </a>
+                    </li>
                     <li class="nav-item ">
                         <a class="nav-link" href="/employee/checkingAccounts">
                             <i class="material-icons">group</i>
                             <p>Checking Accounts</p>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/employee/checkingDeposits">
+                            <i class="material-icons">group</i>
+                            <p>Checking Deposits</p>
+                        </a>
+                    </li>
+                     <li class="nav-item ">
+                        <a class="nav-link" href="/employee/checkingWithdrawals">
+                            <i class="material-icons">group</i>
+                            <p>Checking Withdrawals</p>
                         </a>
                     </li>
                     <li class="nav-item ">
@@ -106,19 +130,6 @@
                         </a>
                    
                     </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/employee/Deposits">
-                            <i class="material-icons">group</i>
-                            <p>Money Deposits</p>
-                        </a>
-                    </li>
-                    <li class="nav-item ">
-                        <a class="nav-link" href="/employee/Withdrawals">
-                            <i class="material-icons">group</i>
-                            <p>Money Withdrawals</p>
-                        </a>
-                    </li>
-  
                     <?php if($_SESSION['role_id']==="1"){ ?>
 
                     <li class="nav-item ">
@@ -128,6 +139,18 @@
                         </a>
                     </li>
                     <?php } ?>
+                   
+                    
+  
+                    <li class="nav-item ">
+                        <a class="nav-link" href="/employee/LoanPayments">
+                            <i class="material-icons">group</i>
+                            <p>Loan Payments</p>
+                        </a>
+                    </li>
+                    
+                   
+                    
 
                     <!-- <li class="nav-item ">
                         <a class="nav-link" href="../views/student_report.php">
