@@ -25,14 +25,21 @@ require APPROOT . '/views/includes/header.php';
 
                                 <div class="card-body">
 
-                                    
+                                    <div class="form-group bmd-form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="material-icons">perm_identity</i></div>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Account number..." name="account_number" required>
+                                        </div>
+                                    </div>
                                    
                                     <div class="form-group bmd-form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">perm_identity</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Customer Id..." name="customer_id" required>
+                                            <input type="text" class="form-control" placeholder="Saving account number..." name="saving_account_number" required>
                                         </div>
                                     </div>
                                      <div class="form-group bmd-form-group">
@@ -40,7 +47,7 @@ require APPROOT . '/views/includes/header.php';
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">phone</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Amount..." name="balance" required>
+                                            <input type="text" class="form-control" placeholder="Amount..." name="amount" required>
                                         </div>
                                     </div>
                                   
@@ -51,17 +58,10 @@ require APPROOT . '/views/includes/header.php';
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">room</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Branch Id..." name="branch_id" required>
+                                            <input type="text" class="form-control" placeholder="Plan Id..." name="plan_id" required>
                                         </div>
                                     </div>
-                                    <div class="form-group bmd-form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"><i class="material-icons">room</i></div>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Interest Type Id" name="saving_interest_id" required>
-                                        </div>
-                                    </div>
+  
                                    
                                     
                                 <div class="modal-footer">
@@ -87,26 +87,26 @@ require APPROOT . '/views/includes/header.php';
                         <div class="table-responsive">
                             <table class="table" id="myTable">
                                 <thead class=" text-info">
-                                    <th>Account No</th>    
-                                    <th>amount</th>
+                                    <th>Fixed Deposit Id</th>    
+                                    <th>Account Number</th>
+                                    <th>Saving Account Number</th>
                                     <th>Open date</th>
                                    
-                                    <th>Branch id</th>
+                                    <th>Plan id</th>
                                     
-                                    <th>Withdraws</th>
+                                    <th>Amount</th>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                      <?php foreach($data['saving_accounts'] as $FixedDeposit):
-                                             $number = $FixedDeposit->account_number;
-                                            $length = 10;
-                                            $accountNumber = substr(str_repeat(0, $length).$number, - $length);
+                                      <?php foreach($data['fixed_deposits'] as $FixedDeposit):
+                                            
                                         ?>
-                                             <td><?php echo $accountNumber; ?></td>
-                                            <td><?php echo $FixedDeposit->balance; ?></td>
+                                             <td><?php echo $FixedDeposit->fixed_deposit_id; ?></td>
+                                            <td><?php echo $FixedDeposit->account_number; ?></td>
+                                            <td><?php echo $FixedDeposit->saving_account_number; ?></td>
                                             <td><?php echo $FixedDeposit->open_date; ?></td>
-                                            <td><?php echo $FixedDeposit->branch_id; ?></td>
-                                            <td><?php echo $FixedDeposit->withdraw_count; ?></td>
+                                            <td><?php echo $FixedDeposit->plan_id; ?></td>
+                                            <td><?php echo $FixedDeposit->amount; ?></td>
                                            
                                            
                                     </tr>
