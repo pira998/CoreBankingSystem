@@ -105,7 +105,7 @@ require APPROOT . '/views/includes/header.php';
                                         ?>
                                              <td><?php echo $accountNumber; ?></td>
                                             <td><?php echo $savingAccount->saving_account_number; ?></td>
-                                            <td><?php echo $savingAccount->balance; ?></td>
+                                            <td><?php echo $savingAccount->saving_balance; ?></td>
                                             <td><?php echo $savingAccount->open_date; ?></td>
                                             <td><?php echo $savingAccount->branch_id; ?></td>
                                             <td><?php echo $savingAccount->withdraw_count; ?></td>
