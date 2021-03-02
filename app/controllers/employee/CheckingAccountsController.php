@@ -40,23 +40,19 @@ class CheckingAccounts extends Controller {
                     if($this->accountModel->addAccount($data)){
                         $result = $this->accountModel->getAccountNumber($data);
                         $accountNumber = $result->account_number;
-                        $this->accountModel->addCheckingAccount($accountNumber);
+                        $this->accountModel->addCheckingAccount($accountNumber,$data);
                         $this->index();
          
                     } 
                     
-                
-                
-
             
             }else {
                 if (!$this->accountModel->checkCheckingAccount($data)){
                      
                     $result = $this->accountModel->getAccountNumber($data);
                     $accountNumber = $result->account_number;
-                    $this->accountModel->addCheckingAccount($accountNumber);
+                    $this->accountModel->addCheckingAccount($accountNumber,$data);
                     $this->index();
-
                 }
 
                 else{
