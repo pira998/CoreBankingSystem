@@ -61,71 +61,47 @@ class Customer {
 
 
 
-    public function approve($id){
-        $this->db->query('UPDATE customers SET active = :active  WHERE customer_id = :id');
-
-        $this->db->bind(':id', (int)$id);
-        $this->db->bind(':active', "Yes");
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-    public function notApprove($id){
-        $this->db->query('UPDATE customers SET active = :active  WHERE customer_id = :id');
-
-        $this->db->bind(':id', (int)$id);
-        $this->db->bind(':active', "No");
-
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
 
-    public function deleteCustomerById($id){
+    // public function deleteCustomerById($id){
         
-        $this->db->query('DELETE FROM customers WHERE customer_id = :id');
+    //     $this->db->query('DELETE FROM customers WHERE customer_id = :id');
 
-        $this->db->bind(':id', (int)$id);
+    //     $this->db->bind(':id', (int)$id);
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+    //     if ($this->db->execute()) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
         
-    }
-    public function deleteIndividualCustomer($id){
+    // }
+    // public function deleteIndividualCustomer($id){
         
-        $this->db->query('DELETE FROM individual_customers WHERE customer_id = :id');
+    //     $this->db->query('DELETE FROM individual_customers WHERE customer_id = :id');
 
-        $this->db->bind(':id', (int)$id);
+    //     $this->db->bind(':id', (int)$id);
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+    //     if ($this->db->execute()) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
         
-    }
-    public function deleteOrganizationalCustomerInfo($id){
+    // }
+    // public function deleteOrganizationalCustomerInfo($id){
         
-        $this->db->query('DELETE FROM customers WHERE customer_id = :id');
+    //     $this->db->query('DELETE FROM customers WHERE customer_id = :id');
 
-        $this->db->bind(':id', (int)$id);
+    //     $this->db->bind(':id', (int)$id);
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+    //     if ($this->db->execute()) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
         
-    }
+    // }
 
 
 
