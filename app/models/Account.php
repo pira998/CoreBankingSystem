@@ -184,8 +184,36 @@ class Account{
             return false;
         }
     }
+    public function savingReceived($data){
+        $this->db->query('CALL `savingReceived`(:account_number,:saving_account_number,:amount);');
+
+        $this->db->bind(':account_number', $data['account_number']);
+        $this->db->bind(':saving_account_number', $data['saving_account_number']);
+        $this->db->bind(':amount', (int)$data['amount']);
+
+        if ($this->db->execute()) {
+
+            return true;
+        } else {
+            return false;
+        }
+    }
     public function savingWithdraw($data){
         $this->db->query('CALL `savingWithdraw`(:account_number,:saving_account_number,:amount);');
+
+        $this->db->bind(':account_number', $data['account_number']);
+        $this->db->bind(':saving_account_number', $data['saving_account_number']);
+        $this->db->bind(':amount', (int)$data['amount']);
+
+        if ($this->db->execute()) {
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+    public function savingSent($data){
+        $this->db->query('CALL `savingSent`(:account_number,:saving_account_number,:amount);');
 
         $this->db->bind(':account_number', $data['account_number']);
         $this->db->bind(':saving_account_number', $data['saving_account_number']);
