@@ -58,7 +58,7 @@ class SavingAccounts extends Controller {
             }else {
                 if(!$this->accountModel->checkSavingAccount($data)){
                 $result = $this->accountModel->checkSavingMinimumAmount($data['saving_interest_id'],$data['balance']);
-                if($result[0]['result']){
+                if((int)$result[0]['result']){
                     $result = $this->accountModel->getAccountNumber($data);
                     $accountNumber = $result->account_number;
                     $this->accountModel->addSavingAccount($accountNumber,$data);
