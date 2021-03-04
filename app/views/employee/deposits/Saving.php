@@ -7,7 +7,7 @@ require APPROOT . '/views/includes/header.php';
     <div class="container-fluid">
     <center>
             <button type="button" class="btn btn-info btn-round" data-toggle="modal" data-target="#exampleModal">
-                Create Saving Account
+                Create Saving Deposit
             </button>
 
             <!-- Modal -->
@@ -15,24 +15,31 @@ require APPROOT . '/views/includes/header.php';
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Create Saving Account</h5>
+                            <h5 class="modal-title" id="exampleModalLabel">Create Saving Deposit</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="form" method="post" action="/employee/SavingAccounts/create">
+                            <form class="form" method="post" action="/employee/SavingDeposits/create">
 
                                 <div class="card-body">
 
-                                    
+                                     <div class="form-group bmd-form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="material-icons">perm_identity</i></div>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Account number..." name="account_number" required>
+                                        </div>
+                                    </div>    
                                    
                                     <div class="form-group bmd-form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">perm_identity</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Customer Id..." name="customer_id" required>
+                                            <input type="text" class="form-control" placeholder="Saving account number..." name="saving_account_number" required>
                                         </div>
                                     </div>
                                      <div class="form-group bmd-form-group">
@@ -40,29 +47,13 @@ require APPROOT . '/views/includes/header.php';
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">phone</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Amount..." name="balance" required>
+                                            <input type="text" class="form-control" placeholder="Amount..." name="amount" required>
                                         </div>
                                     </div>
                                   
 
                                     
-                                    <div class="form-group bmd-form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"><i class="material-icons">room</i></div>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Branch Id..." name="branch_id" required>
-                                        </div>
-                                    </div>
-                                    <div class="form-group bmd-form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"><i class="material-icons">room</i></div>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Interest Type Id" name="saving_interest_id" required>
-                                        </div>
-                                    </div>
-                                   
+                                    
                                     
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -80,36 +71,33 @@ require APPROOT . '/views/includes/header.php';
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-info">
-                        <h4 class="card-title ">Saving Account </h4>
+                        <h4 class="card-title ">Saving Deposits </h4>
                         <p class="card-category"> Info </p>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table" id="myTable">
                                 <thead class=" text-info">
-                                    <th>Account No</th>    
-                                    <th>Saving Account No</th>    
-                                    <th>amount</th>
-                                    <th>Open date</th>
+                                    <th>Saving Deposit Id</th>    
+                                    <th>Account Number</th>
+                                    <th>Saving Account Number</th>
                                    
-                                    <th>Branch id</th>
+                                    <th>Amount</th>
                                     
-                                    <th>Withdraws</th>
+                                    <th>Deposit Date</th>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                      <?php foreach($data['saving_accounts'] as $savingAccount):
-                                             $number = $savingAccount->account_number;
-                                            $length = 10;
-                                            $accountNumber = substr(str_repeat(0, $length).$number, - $length);
+                                      <?php foreach($data['saving_deposits'] as $Deposit):
+                                            
                                         ?>
-                                             <td><?php echo $accountNumber; ?></td>
-                                            <td><?php echo $savingAccount->saving_account_number; ?></td>
-                                            <td><?php echo $savingAccount->saving_balance; ?></td>
-                                            <td><?php echo $savingAccount->open_date; ?></td>
-                                            <td><?php echo $savingAccount->branch_id; ?></td>
-                                            <td><?php echo $savingAccount->withdraw_count; ?></td>
-                                           
+                                             <td><?php echo $Deposit->saving_deposit_id; ?></td>
+                                            <td><?php echo $Deposit->account_number; ?></td>
+                                            <td><?php echo $Deposit->saving_account_number; ?></td>
+                                            <td><?php echo $Deposit->amount; ?></td>
+
+                                            <td><?php echo $Deposit->deposit_date; ?></td>
+                        
                                            
                                     </tr>
                                         <?php endforeach; ?>
@@ -127,11 +115,7 @@ require APPROOT . '/views/includes/header.php';
                 </div>
             </div>
 
-
-
-
-
-
 <?php
 require APPROOT . '/views/includes/footer.php';
+
 ?>

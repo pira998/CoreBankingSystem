@@ -8,3 +8,10 @@
             return false;
         }
     }
+    function isCustomerLoggedIn() {
+        if (isset($_SESSION['customer_id'])) {
+            return true;
+        } else {
+            return false;
+        }
+    }

@@ -96,7 +96,7 @@ require APPROOT . '/views/includes/header.php';
                                         ?>
                                              <td><?php echo $accountNumber ?></td>
                                             <td><?php echo $checkingAccount->checking_account_number; ?></td>
-                                            <td><?php echo $checkingAccount->balance; ?></td>
+                                            <td><?php echo $checkingAccount->checking_balance; ?></td>
                                             <td><?php echo $checkingAccount->open_date; ?></td>
                                             <td><?php echo $checkingAccount->branch_id; ?></td>
                                         

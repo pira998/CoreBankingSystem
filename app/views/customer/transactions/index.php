@@ -20,18 +20,16 @@ require APPROOT . '/views/includes/customer_header.php';
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form class="form" method="post" action="/employee/customers/create">
+                            <form class="form" method="post" action="/customer/transactions/create">
 
                                 <div class="card-body">
 
-                                    
-                                   
-                                    <div class="form-group bmd-form-group">
+                                     <div class="form-group bmd-form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">perm_identity</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Customer Name..." name="name" required>
+                                            <input type="text" class="form-control" placeholder="From: Account Number..." name="from_account_number" required>
                                         </div>
                                     </div>
                                      <div class="form-group bmd-form-group">
@@ -39,43 +37,47 @@ require APPROOT . '/views/includes/customer_header.php';
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">phone</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Phone number..." name="phone_number" required>
+                                            <input type="text" class="form-control" placeholder="From: Saving Account Number..." name="from_saving_account_number" required>
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group bmd-form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="material-icons">perm_identity</i></div>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="To: Account Number..." name="to_account_number" required>
+                                        </div>
+                                    </div>
+                                     <div class="form-group bmd-form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="material-icons">phone</i></div>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="To: Saving Account Number..." name="to_saving_account_number" required>
                                         </div>
                                     </div>
                                   
 
-                                    <div class="form-group bmd-form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"><i class="material-icons">grade</i></div>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Date of Birth 31/12/XXXX..." name="dob" required>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group bmd-form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">room</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Address..." name="address" required>
+                                            <input type="text" class="form-control" placeholder="Amount..." name="amount" required>
                                         </div>
                                     </div>
+                                
                                     <div class="form-group bmd-form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">room</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="1-Individual/2-Organization" name="type" required>
+                                            <input type="text" class="form-control" placeholder="Description..." name="description">
                                         </div>
                                     </div>
-                                    <div class="form-group bmd-form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"><i class="material-icons">pets</i></div>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Nic for individual..." name="nic">
-                                        </div>
-                                    </div>
+                                    
                                     
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -100,30 +102,34 @@ require APPROOT . '/views/includes/customer_header.php';
                         <div class="table-responsive">
                             <table class="table" id="myTable">
                                 <thead class=" text-info">
-                                    <th>Name</th>    
-                                    <th>Id</th>
-                                    <th>Phone Number</th>
+                                    <th>Transaction ID</th>    
+                                    <th>From Acc</th>
+                                    <th>From Sav Acc</th>
+                                    <th>To Acc</th>
+                                    <th>To Sav Acc</th>
+                                    <th>Amount</th>
+                                    <th>Description</th>
+                                    <th>Transaction date</th>
+
+
                                    
-                                    <th>Edit</th>
                                     
-                                    <th>Delete</th>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                      <?php foreach($data['customers'] as $customer): ?>
-                                             <td id="username"><?php echo "to be added"; ?></td>
-                                            <td><?php echo "to be added"; ?></td>
-                                        
-                                           
-                                         
-                                            <td><?php echo "to be added"; ?></td>
-                                           
-                                            <td><a href="/employee/customers/update/<?php echo "to be added"; ?>"><button class="btn btn-info">Edit</button></a>
-                                            </td>
+                                      <?php foreach($data['transactions'] as $transaction): ?>
+                                             <td id="username"><?php echo $transaction->online_trans_id; ?></td>
+                                            <td><?php echo $transaction-> from_account_number ?></td>
+                                            <td><?php echo $transaction-> from_saving_account_number ?></td>
+                                            <td><?php echo $transaction-> to_account_number ?></td>
+                                            <td><?php echo $transaction-> to_saving_account_number ?></td>
+                                            <td><?php echo $transaction-> amount ?></td>
+                                            <td><?php echo $transaction-> description ?></td>
+                                            <td><?php echo $transaction-> transaction_date ?></td>
 
                                            
-                                            <td><a href="/employee/customers/delete/<?php echo "to be added" ?>"><button class="btn btn-danger">Delete</button></a>
-                                            </td>
+                                         
+                                           
                                     </tr>
                                         <?php endforeach; ?>
 
