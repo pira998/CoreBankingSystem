@@ -8,7 +8,11 @@ class Transactions extends Controller {
 
     public function index( $id ) {
         $transactions = $this->transactionModel->findAllTransactionsById($id);
+<<<<<<< HEAD
          if ( !isCustomerLoggedIn() ) {
+=======
+        if ( !isLoggedIn() ) {
+>>>>>>> e83341e485aa73c3cd79bdf21450d581c8e052f7
             header( 'Location: ' . URLROOT . '/customer/profile/login' );
         }
         $data = [

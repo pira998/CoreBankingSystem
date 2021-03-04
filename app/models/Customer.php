@@ -77,45 +77,49 @@ class Customer {
 
 
 
+<<<<<<< HEAD
     public function deleteCustomerById($id){
+=======
+    // public function deleteCustomerById($id){
+>>>>>>> e83341e485aa73c3cd79bdf21450d581c8e052f7
         
-        $this->db->query('DELETE FROM customers WHERE customer_id = :id');
+    //     $this->db->query('DELETE FROM customers WHERE customer_id = :id');
 
-        $this->db->bind(':id', (int)$id);
+    //     $this->db->bind(':id', (int)$id);
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+    //     if ($this->db->execute()) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
         
-    }
-    public function deleteIndividualCustomer($id){
+    // }
+    // public function deleteIndividualCustomer($id){
         
-        $this->db->query('DELETE FROM individual_customers WHERE customer_id = :id');
+    //     $this->db->query('DELETE FROM individual_customers WHERE customer_id = :id');
 
-        $this->db->bind(':id', (int)$id);
+    //     $this->db->bind(':id', (int)$id);
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+    //     if ($this->db->execute()) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
         
-    }
-    public function deleteOrganizationalCustomerInfo($id){
+    // }
+    // public function deleteOrganizationalCustomerInfo($id){
         
-        $this->db->query('DELETE FROM customers WHERE customer_id = :id');
+    //     $this->db->query('DELETE FROM customers WHERE customer_id = :id');
 
-        $this->db->bind(':id', (int)$id);
+    //     $this->db->bind(':id', (int)$id);
 
-        if ($this->db->execute()) {
-            return true;
-        } else {
-            return false;
-        }
+    //     if ($this->db->execute()) {
+    //         return true;
+    //     } else {
+    //         return false;
+    //     }
         
-    }
+    // }
 
 
 
