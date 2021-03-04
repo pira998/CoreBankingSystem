@@ -22,9 +22,7 @@
                 <?php echo $data['usernameError']; ?>
             </span>
             <input type="text" placeholder="Customer Id *" name="customer_id">
-            <span class="invalidFeedback">
-                <?php echo $data['customerIdError']; ?>
-            </span>
+        
 
             <input type="password" placeholder="Password *" name="password">
             <span class="invalidFeedback">

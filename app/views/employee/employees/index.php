@@ -23,8 +23,24 @@ require APPROOT . '/views/includes/header.php';
 
                                 <div class="card-body">
 
-                                    
-                                   
+                                    <div class="form-group bmd-form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="material-icons">perm_identity</i></div>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="User Name..." name="username" required>
+                                        </div>
+                                    </div>
+
+                                      <div class="form-group bmd-form-group">
+                                        <div class="input-group">
+                                            <div class="input-group-prepend">
+                                                <div class="input-group-text"><i class="material-icons">perm_identity</i></div>
+                                            </div>
+                                            <input type="password" class="form-control" placeholder="Password..." name="password" required>
+                                        </div>
+                                    </div>
+
                                     <div class="form-group bmd-form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -43,14 +59,7 @@ require APPROOT . '/views/includes/header.php';
                                     </div>
                                   
 
-                                    <div class="form-group bmd-form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"><i class="material-icons">grade</i></div>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="Date of Birth 31/12/XXXX..." name="dob" required>
-                                        </div>
-                                    </div>
+                                    
                                     <div class="form-group bmd-form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
@@ -59,20 +68,13 @@ require APPROOT . '/views/includes/header.php';
                                             <input type="text" class="form-control" placeholder="Address..." name="address" required>
                                         </div>
                                     </div>
-                                    <div class="form-group bmd-form-group">
-                                        <div class="input-group">
-                                            <div class="input-group-prepend">
-                                                <div class="input-group-text"><i class="material-icons">room</i></div>
-                                            </div>
-                                            <input type="text" class="form-control" placeholder="1-Individual/2-Organization" name="type" required>
-                                        </div>
-                                    </div>
+                                   
                                     <div class="form-group bmd-form-group">
                                         <div class="input-group">
                                             <div class="input-group-prepend">
                                                 <div class="input-group-text"><i class="material-icons">pets</i></div>
                                             </div>
-                                            <input type="text" class="form-control" placeholder="Nic for individual..." name="nic">
+                                            <input type="text" class="form-control" placeholder="Nic..." name="nic">
                                         </div>
                                     </div>
                                     

@@ -30,7 +30,13 @@ class Profile extends Controller {
     
     public function update($id){
 
-        $info = $this->customerModel->getInfo($id);
+       $onlineAccountInfo = $this->onlineProfileModel->getOnlineAccountInfo($id);
+        $isIndividualCustomer = $this->customerModel->isIndividualCustomer( $onlineAccountInfo->customer_id );
+        if ( $isIndividualCustomer ) {
+            $info = $this->customerModel->getIndividualCustomerInfo(  $onlineAccountInfo->customer_id );
+        } else {
+            $info = $this->customerModel->getOrganizationalCustomerInfo(  $onlineAccountInfo->customer_id);
+        }
 
         $data = [
             'info' => $info,
@@ -50,9 +56,7 @@ class Profile extends Controller {
             $data = [
                 'id' => $id,
                 'info' => $info,
-                'firstname'=> ($_POST["firstname"]),
-                'lastname'=> ($_POST["lastname"]),
-                'email'=> ($_POST["email"]),
+                'customer_id'=>$_SESSION['customer_id'],
                 'address'=> ($_POST["address"]),
                
                 
@@ -156,12 +160,15 @@ class Profile extends Controller {
                 $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 
                 //Register user from model function
-                if ($this->onlineProfileModel->register($data)) {
+                If(!$this->onlineProfileModel->findCustomerByCustomerID($data['customer_id'])){
+                    if ($this->onlineProfileModel->register($data)) {
                     //Redirect to the login page
                     header('location: ' . URLROOT . '/customer/profile/login');
-                } else {
+                    } else {
                     die('Something went wrong.');
                 }
+                }
+                
             }
         }
         $this->view('users/register', $data);

@@ -42,8 +42,8 @@ class Customers extends Controller {
 
             ];
             // $data['password'] = password_hash( $data['password'], PASSWORD_DEFAULT );
-
-            if ( $this->customerModel->addCustomer( $data ) ) {
+            if($this->customerModel->checkCustomerByPhoneNumber($data['phone_number'])){
+                if ( $this->customerModel->addCustomer( $data ) ) {
                 if ( trim( $_POST['type'] === '1' ) ) {
                     $info = $this->customerModel->getCustomerID( $data );
                     $data['customer_id'] = $info->customer_id;
@@ -55,6 +55,11 @@ class Customers extends Controller {
             } else {
                 die( 'Something went wrong, please try again!' );
             }
+            }
+            else {
+                die( 'Already mobile number exist, please try again!' );
+            }
+            
 
         }
 

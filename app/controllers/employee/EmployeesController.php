@@ -18,18 +18,15 @@ class Employees extends Controller {
     }
     public function create(){
         $data = [
-            'id' => '',
-            'regis_num' => '',
-            'firstname' => '',        
-            'firstname' => '',
-            'lastname' => '',            
+     
             'username' => '',            
-            'grade' => '',         
+            'name'=>'',
+      
             'address' => '',           
-            'email' => '',         
+        
             'nic' => '',       
             'password' => '',        
-            'active' => "Yes",
+       
             
         ];
 
@@ -37,21 +34,20 @@ class Employees extends Controller {
             $_POST = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 
             $data = [
-                'id' => '',
-               
-                'firstname' => trim($_POST['firstname']),
-                'lastname' => trim($_POST['lastname']),
+
                 'username' => trim($_POST['username']),
+                'name' => trim($_POST['name']),
                 
                 'address' => trim($_POST['address']),
-                'email' => trim($_POST['email']),
+                'phone_number' => trim($_POST['phone_number']),
+       
                 'nic' => trim($_POST['nic']),
-                'password' => trim($_POST['pass']),
-                'active' => "Yes",
+                'password' => trim($_POST['password']),
+
 
             ];
             $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT); 
-            if ($this->employeeModel->addemployee($data)) {
+            if ($this->employeeModel->register($data)) {
                     $this->index();
                 } else {
                     die("Something went wrong, please try again!");

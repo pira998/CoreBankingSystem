@@ -285,4 +285,12 @@ class Account{
              return false;
          }
     }
+    public function findAccountBalance($id){
+        $this->db->query('SELECT balance FROM accounts WHERE customer_id= :id');
+        $this->db->bind(':id', $id);
+
+        $row = $this->db->single();
+
+        return $row;
+    }
 }

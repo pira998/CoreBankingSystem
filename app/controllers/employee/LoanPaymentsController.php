@@ -9,9 +9,9 @@ class LoanPayments extends Controller {
 
     public function index() {
         $loanPayments = $this->depositModel->findAllLoanPayments();
-        if ( !isLoggedIn() ) {
-            header( 'Location: ' . URLROOT . '/employee/profile/employee_login' );
-        }
+        // if ( !isLoggedIn() ) {
+        //     header( 'Location: ' . URLROOT . '/employee/profile/employee_login' );
+        // }
         $data = [
             'title' => 'loans page',
             'loan_payments' => $loanPayments

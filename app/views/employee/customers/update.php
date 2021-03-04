@@ -41,7 +41,7 @@ $isIndividualCustomer = $data['isIndividualCustomer'];
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Phone Number</label>
-                                        <input type="text" class="form-control" name="phone_number" value="<?php echo $customer->phone_number; ?>">
+                                        <input type="text" class="form-control" name="phone_number" value="<?php echo $customer->phone_number; ?>" disabled>
                                     </div>
                                 </div>
                             </div>

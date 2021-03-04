@@ -12,7 +12,7 @@ require APPROOT . '/views/includes/customer_header.php';
                     <i class="material-icons">book</i>
                 </div>
                 <p class="card-category">Available Balance</p>
-                <h3 class="card-title"><?php echo 'value TBD' ?></h3>
+                <h3 class="card-title"><?php echo $data['accountBalance']->balance; ?></h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -21,14 +21,14 @@ require APPROOT . '/views/includes/customer_header.php';
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-md-6 col-sm-6">
+    <!-- <div class="col-lg-3 col-md-6 col-sm-6">
         <div class="card card-stats">
             <div class="card-header card-header-danger card-header-icon">
                 <div class="card-icon">
                     <i class="material-icons">book</i>
                 </div>
                 <p class="card-category">Total Loan Amount</p>
-                <h3 class="card-title"><?php echo 'value TBD' ?></h3>
+                <h3 class="card-title"><?php echo $data['totalLoan']->customer_id; ?></h3>
             </div>
             <div class="card-footer">
                 <div class="stats">
@@ -104,7 +104,7 @@ require APPROOT . '/views/includes/customer_header.php';
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     </div>
     
    

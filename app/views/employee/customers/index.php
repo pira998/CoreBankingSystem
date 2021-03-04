@@ -110,7 +110,6 @@ require APPROOT . '/views/includes/header.php';
                                    
                                     <th>Edit</th>
                                     
-                                    <th>Delete</th>
                                 </thead>
                                 <tbody>
                                     <tr>
@@ -126,8 +125,8 @@ require APPROOT . '/views/includes/header.php';
                                             </td>
 
                                            
-                                            <td><a href="/employee/customers/delete/<?php echo (int)$customer->customer_id ?>"><button class="btn btn-danger">Delete</button></a>
-                                            </td>
+                                            <!-- <td><a href="/employee/customers/delete/"><button class="btn btn-danger">Delete</button></a>
+                                            </td> -->
                                     </tr>
                                         <?php endforeach; ?>
 

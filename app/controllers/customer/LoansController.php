@@ -10,7 +10,7 @@ class Loans extends Controller {
 
     public function index( $id ) {
         $loans = $this->loanModel->findAllLoansById($id);
-        if ( !isLoggedIn() ) {
+         if ( !isCustomerLoggedIn() ) {
             header( 'Location: ' . URLROOT . '/customer/profile/login' );
         }
         $data = [

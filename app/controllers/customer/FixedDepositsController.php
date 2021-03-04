@@ -7,7 +7,7 @@ class FixedDeposits extends Controller {
 
     public function index($id) {
         $fixedDeposits = $this->fixedDepositModel->findAllFixedDepositsById($id);
-        if ( !isLoggedIn() ) {
+        if ( !isCustomerLoggedIn() ) {
             header( 'Location: ' . URLROOT . '/customer/profile/login' );
         }
         $data = [

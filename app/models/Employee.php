@@ -42,15 +42,16 @@ class Employee {
     }
 
     public function register($data) {
-        $this->db->query('INSERT INTO librarian (username, email, firstname,lastname,nic,date,address,password) VALUES(:username, :email,:firstname,:lastname,:nic,:date,:address, :password)');
+        $this->db->query('CALL `addEmployee`(:username,:name,:phone_number,:password,:nic,:branch_id,:address);');
 
         //Bind values
         $this->db->bind(':username', $data['username']);
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':firstname', $data['firstname']);
-        $this->db->bind(':lastname', $data['lastname']);
+        $this->db->bind(':name', $data['name']);
+      
         $this->db->bind(':nic', $data['nic']);
-        $this->db->bind(':date', $data['date']);
+        $this->db->bind(':phone_number', $data['phone_number']);
+        $this->db->bind(':branch_id', $_SESSION['branch_id']);
+
         $this->db->bind(':address', $data['address']);
         $this->db->bind(':password', $data['password']);
 

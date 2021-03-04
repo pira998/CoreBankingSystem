@@ -6,7 +6,7 @@ class LoanRequests extends Controller {
 
     public function index($id) {
         $loanRequests = $this->loanRequestModel->findAllLoanRequestsById($id);
-        if ( !isLoggedIn() ) {
+         if ( !isCustomerLoggedIn() ) {
             header( 'Location: ' . URLROOT . '/customer/profile/login' );
         }
         $data = [

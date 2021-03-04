@@ -87,5 +87,11 @@ class Loan {
 
         return $results;
     }
+    public function findAllLoanAmounts($id){
+        $this->db->query( 'CALL `findAllLoanAmounts`(:customer_id);' );
+        $this->db->bind( ':customer_id', $id );
+        $results = $this->db->resultSet();
 
+        return $results;
+    }
 }

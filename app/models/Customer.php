@@ -20,6 +20,20 @@ class Customer {
          }
 
     }
+    public function checkCustomerByPhoneNumber($phoneNumber){
+        $this->db->query("CALL `checkCustomerByPhoneNumber`(:phone_number);");
+        $this->db->bind(':phone_number', $phoneNumber);
+      
+
+         $results = $this->db->rowCount();
+         if($results===1){
+             return true;
+         }
+         else{
+             return false;
+         }
+
+    }
      public function getIndividualCustomerInfo($id){
         $this->db->query('SELECT * FROM customers JOIN individual_customers WHERE customers.customer_id= :customer_id AND customers.customer_id=individual_customers.customer_id');
         $this->db->bind(':customer_id', $id);
@@ -63,45 +77,45 @@ class Customer {
 
 
 
-    // public function deleteCustomerById($id){
+    public function deleteCustomerById($id){
         
-    //     $this->db->query('DELETE FROM customers WHERE customer_id = :id');
+        $this->db->query('DELETE FROM customers WHERE customer_id = :id');
 
-    //     $this->db->bind(':id', (int)$id);
+        $this->db->bind(':id', (int)$id);
 
-    //     if ($this->db->execute()) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
         
-    // }
-    // public function deleteIndividualCustomer($id){
+    }
+    public function deleteIndividualCustomer($id){
         
-    //     $this->db->query('DELETE FROM individual_customers WHERE customer_id = :id');
+        $this->db->query('DELETE FROM individual_customers WHERE customer_id = :id');
 
-    //     $this->db->bind(':id', (int)$id);
+        $this->db->bind(':id', (int)$id);
 
-    //     if ($this->db->execute()) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
         
-    // }
-    // public function deleteOrganizationalCustomerInfo($id){
+    }
+    public function deleteOrganizationalCustomerInfo($id){
         
-    //     $this->db->query('DELETE FROM customers WHERE customer_id = :id');
+        $this->db->query('DELETE FROM customers WHERE customer_id = :id');
 
-    //     $this->db->bind(':id', (int)$id);
+        $this->db->bind(':id', (int)$id);
 
-    //     if ($this->db->execute()) {
-    //         return true;
-    //     } else {
-    //         return false;
-    //     }
+        if ($this->db->execute()) {
+            return true;
+        } else {
+            return false;
+        }
         
-    // }
+    }
 
 
 
@@ -140,10 +154,10 @@ class Customer {
     }
 
     public function updateProfile($data){
-        $this->db->query('UPDATE customers SET phone_number=:phone_number,address=:address WHERE customer_id = :customer_id');
+        $this->db->query('UPDATE customers SET address=:address WHERE customer_id = :customer_id');
 
         $this->db->bind(':customer_id', $data['customer_id']);
-        $this->db->bind(':phone_number', $data['phone_number']);
+       
         $this->db->bind(':address', $data['address']);
        
 

@@ -9,8 +9,8 @@ class OnlineProfile {
 
     public function getOnlineAccountInfo( $id ) {
 
-        $this->db->query( 'SELECT * FROM online_accounts WHERE online_account_id= :online_account_id' );
-        $this->db->bind( ':online_account_id', ( int )$id );
+        $this->db->query( 'SELECT * FROM online_accounts WHERE customer_id= :customer_id' );
+        $this->db->bind( ':customer_id', ( int )$id );
         $row = $this->db->single();
         return $row;
 

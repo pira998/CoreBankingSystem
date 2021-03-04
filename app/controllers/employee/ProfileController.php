@@ -170,6 +170,7 @@ class Profile extends Controller {
         $_SESSION['employee_id'] = $user->employee_id;
         $_SESSION['username'] = $user->username;
         $_SESSION['role_id'] = $user->role_id;
+        $_SESSION['branch_id']= $user->branch_id;
         
         header('location:' . URLROOT . '/employee/pages/index');
     }
@@ -178,6 +179,7 @@ class Profile extends Controller {
         unset($_SESSION['user_id']);
         unset($_SESSION['username']);
         unset($_SESSION['email']);
+        unset($_SESSION['branch_id']);
         header('location:' . URLROOT . '/employee/profile/employee_login');
     }
 
